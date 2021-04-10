@@ -1,6 +1,8 @@
 import pandas as pd
 import json
 
+SOURCE_SEPOMEX = "Correos de México. https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx"
+
 print("reading data")
 
 df = pd.read_csv("mx.csv")
@@ -23,7 +25,7 @@ for postal, group in groups:
 
 	# Credits to SEPOMEX
 
-	data["source"] = "Correos de México. https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx"
+	data["source"] = SOURCE_SEPOMEX
 
 	# add it to the general set
 
