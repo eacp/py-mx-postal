@@ -21,13 +21,19 @@ for postal, group in groups:
 
 	data["areas"] = [ {'name': name, 'type': typ} for name, typ in zip(areas,types)]
 
+	# Credits to SEPOMEX
+
+	data["source"] = "Correos de México. https://www.correosdemexico.gob.mx/SSLServicios/ConsultaCP/CodigoPostal_Exportar.aspx"
+
 	# add it to the general set
 
 	mx[postal] = data
 
 	# Export to individual file (like 100k files lol)
-	with open(f"cps/{postal}.json", 'w') as individual:
+	with open(f"public/cp/{postal:05d}.json", 'w', encoding="utf-8") as individual:
 		json.dump(data, individual)
+
+		print(individual)
 
 
 # Write the whole data in JSON

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "eacp-e6882"
+  },
+  "targets": {
+    "eacp-e6882": {
+      "hosting": {
+        "data": [
+          "mx-postal-data"
+        ]
+      }
+    }
+  }
+}

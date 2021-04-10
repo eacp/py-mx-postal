@@ -1,0 +1,12 @@
+{
+  "hosting": [{
+    "target": "data",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**",
+      "*.py"
+    ]
+  }]
+}
