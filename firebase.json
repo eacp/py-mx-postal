@@ -1,6 +1,7 @@
 {
-  "hosting": {
-    "public": ".",
+  "hosting": [{
+    "target": "data",
+    "public": "public",
     "ignore": [
       "firebase.json",
       "**/.*",
@@ -8,5 +9,5 @@
       "*.py",
       "*.csv"
     ]
-  }
+  }]
 }
