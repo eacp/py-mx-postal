@@ -134,3 +134,4 @@ dmypy.json
 
 # Ignore Postal Code generated files
 public/cp/*.json
+.firebase/
