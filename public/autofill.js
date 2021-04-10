@@ -46,7 +46,10 @@ function fetchPostal(code) {
 		return;
 	}
 
-	if(code in cache) fill(cache[code]);
+	if(code in cache) {
+		fill(cache[code]);
+		return;
+	}
 
 	// Make the request
 	fetch(postalURI(code)).then(response => response.json())
@@ -56,3 +59,9 @@ function fetchPostal(code) {
 		cache[code] = data;
 	});
 }
+
+// Bind the fetch to the autocomplete of the postal input
+postal.addEventListener("keyup", event => {
+	console.log(postal.value);
+	fetchPostal(postal.value);
+});
