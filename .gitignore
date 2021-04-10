@@ -130,3 +130,7 @@ dmypy.json
 
 # IDE
 .vscode
+
+
+# Ignore Postal Code generated files
+public/cp/*.json
