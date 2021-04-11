@@ -37,27 +37,27 @@ const fill = (data) => {
 }
 
 
-// Make a cache
-let cache = {};
-
 function fetchPostal(code) {
 	if(code.length != 5) {
 		console.log("Invalid:",code, code.length);
 		return;
 	}
 
-	if(code in cache) {
-		fill(cache[code]);
-		return;
-	}
+	// Check if the code is in the cache
 
-	// Make the request
-	fetch(postalURI(code)).then(response => response.json())
+	if(localStorage.getItem(code) == null) fetch(postalURI(code)).then(response => response.json())
 	.then((data) => {
 		// Fill
 		fill(data);
-		cache[code] = data;
+		localStorage.setItem(code, JSON.stringify(data));
 	});
+	else {
+		// Fill it from local storage
+		const dataJSON = localStorage.getItem(code);
+		const data = JSON.parse(dataJSON);
+
+		fill(data);
+	}
 }
 
 // Bind the fetch to the autocomplete of the postal input
